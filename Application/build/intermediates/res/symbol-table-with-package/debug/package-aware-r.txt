@@ -115,7 +115,6 @@ attr buttonStyle
 attr buttonStyleSmall
 attr buttonTint
 attr buttonTintMode
-attr camera_id
 attr cardBackgroundColor
 attr cardCornerRadius
 attr cardElevation
@@ -451,7 +450,6 @@ attr showDividers
 attr showMotionSpec
 attr showText
 attr showTitle
-attr show_fps
 attr singleChoiceItemLayout
 attr singleLine
 attr singleSelection
@@ -1099,12 +1097,10 @@ id add
 id alertTitle
 id all
 id always
-id any
 id appbar
 id async
 id auto
 id avnnView
-id back
 id barrier
 id beginning
 id blocking
@@ -1155,7 +1151,6 @@ id fill_vertical
 id filled
 id fixed
 id forever
-id front
 id ghost_view
 id gone
 id graph
@@ -1996,7 +1991,6 @@ styleable BottomAppBar backgroundTint fabAlignmentMode fabCradleMargin fabCradle
 styleable BottomNavigationView elevation itemBackground itemHorizontalTranslationEnabled itemIconSize itemIconTint itemTextAppearanceActive itemTextAppearanceInactive itemTextColor labelVisibilityMode menu
 styleable BottomSheetBehavior_Layout behavior_fitToContents behavior_hideable behavior_peekHeight behavior_skipCollapsed
 styleable ButtonBarLayout allowStacking
-styleable CameraBridgeViewBase camera_id show_fps
 styleable CardView android_minWidth android_minHeight cardBackgroundColor cardCornerRadius cardElevation cardMaxElevation cardPreventCornerOverlap cardUseCompatPadding contentPadding contentPaddingBottom contentPaddingLeft contentPaddingRight contentPaddingTop
 styleable ChangeBounds resizeClip
 styleable ChangeTransform reparent reparentWithOverlay

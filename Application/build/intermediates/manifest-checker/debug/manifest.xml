@@ -3,7 +3,7 @@
     package="com.example.android.camera2basic" >
 
     <uses-sdk
-        android:minSdkVersion="22"
+        android:minSdkVersion="21"
         android:targetSdkVersion="26" />
 
     <uses-permission android:name="android.permission.CAMERA" />

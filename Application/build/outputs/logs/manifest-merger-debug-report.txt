@@ -26,7 +26,6 @@ MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\FUJITSU\.gr
 MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\FUJITSU\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\e0d5401ee7a8010a5aba0bb4b85c5d0b\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-compat:28.0.0] C:\Users\FUJITSU\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\0f646fd9e4cb3954ed7c66a9b393c3f3\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\FUJITSU\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\41c00414fdf4ae5ffaa461ce44138937\AndroidManifest.xml:17:1-25:12
-MERGED from [:openCVLibrary343] C:\lab\Mobile\HRV\openCVLibrary343\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\FUJITSU\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\e079fffb6b430a8116f71018700667d7\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:documentfile:28.0.0] C:\Users\FUJITSU\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\af616875cbe6d18b0a4095f2628cf754\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\FUJITSU\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\03ea1b4d56160ca5cab6910eb22768a7\AndroidManifest.xml:17:1-22:12
@@ -167,8 +166,6 @@ MERGED from [com.android.support:support-compat:28.0.0] C:\Users\FUJITSU\.gradle
 MERGED from [com.android.support:support-compat:28.0.0] C:\Users\FUJITSU\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\0f646fd9e4cb3954ed7c66a9b393c3f3\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\FUJITSU\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\41c00414fdf4ae5ffaa461ce44138937\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\FUJITSU\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\41c00414fdf4ae5ffaa461ce44138937\AndroidManifest.xml:20:5-44
-MERGED from [:openCVLibrary343] C:\lab\Mobile\HRV\openCVLibrary343\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41
-MERGED from [:openCVLibrary343] C:\lab\Mobile\HRV\openCVLibrary343\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\FUJITSU\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\e079fffb6b430a8116f71018700667d7\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\FUJITSU\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\e079fffb6b430a8116f71018700667d7\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:documentfile:28.0.0] C:\Users\FUJITSU\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\af616875cbe6d18b0a4095f2628cf754\AndroidManifest.xml:20:5-44
