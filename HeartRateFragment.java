@@ -1,6 +1,5 @@
 package com.example.android.camera2basic;
 
-import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -25,8 +24,8 @@ public class HeartRateFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_heart_rate, container, false);
 
-        bpm = (TextView) view.findViewById(R.id.bpm);
-        graphView = (GraphView) view.findViewById(R.id.graph);
+        bpm = view.findViewById(R.id.bpm);
+        graphView = view.findViewById(R.id.graph);
 
         graphView.getGridLabelRenderer().setHorizontalLabelsVisible(false);
         graphView.getGridLabelRenderer().setVerticalLabelsVisible(false);
@@ -51,6 +50,7 @@ public class HeartRateFragment extends Fragment {
 
         hueValues = SignalProcessing.butterworthFilter(hueValues);
         hueValues = SignalProcessing.splineInterpolate(hueValues);
+        hueValues = SignalProcessing.movingAverage(hueValues);
 
         for(double d : hueValues) {
             System.out.println(d);

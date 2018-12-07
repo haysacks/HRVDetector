@@ -18,8 +18,6 @@ package com.example.android.camera2basic;
 
 import android.Manifest;
 import android.Manifest.permission;
-import android.animation.Animator;
-import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -46,9 +44,7 @@ import android.hardware.camera2.TotalCaptureResult;
 import android.hardware.camera2.params.StreamConfigurationMap;
 import android.media.Image;
 import android.media.ImageReader;
-
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.support.annotation.NonNull;
@@ -56,7 +52,6 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.util.Log;
-import android.util.Property;
 import android.util.Size;
 import android.util.SparseIntArray;
 import android.view.LayoutInflater;
@@ -66,11 +61,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
-import com.transitionseverywhere.Transition;
-import com.transitionseverywhere.TransitionManager;
-import com.transitionseverywhere.TransitionValues;
-import com.transitionseverywhere.utils.IntProperty;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -367,7 +357,7 @@ public class CameraFragment extends Fragment {
                              Bundle savedInstanceState) {
         View inflatedView = inflater.inflate(R.layout.fragment_camera, container, false);
 //        mTransitionsContainer = (ViewGroup) inflatedView.findViewById(R.id.transitions_container);
-        progressBar = (ProgressBar) inflatedView.findViewById(R.id.progressBar);
+        progressBar = inflatedView.findViewById(R.id.progressBar);
         progressBar.setProgress(0);
         progressBar.setMax((int)MainActivity.RECORDING_TIME * 10);
 //        progressBar.setBackgroundColor(Color.WHITE);
@@ -380,7 +370,7 @@ public class CameraFragment extends Fragment {
     public void onViewCreated(final View view, Bundle savedInstanceState) {
 //        view.findViewById(R.id.picture).setOnClickListener(this);
 //        view.findViewById(R.id.info).setOnClickListener(this);
-        mTextureView = (AutoFitTextureView) view.findViewById(R.id.texture);
+        mTextureView = view.findViewById(R.id.texture);
     }
 
     @Override
@@ -924,7 +914,7 @@ public class CameraFragment extends Fragment {
 
     private void endActivity() {
         Activity cameraActivity = getActivity();
-        cameraActivity.setResult(cameraActivity.RESULT_OK);
+        cameraActivity.setResult(Activity.RESULT_OK);
         cameraActivity.finish();
     }
 

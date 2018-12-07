@@ -7,9 +7,36 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import uk.me.berndporr.iirj.*;
+import uk.me.berndporr.iirj.Butterworth;
 
 public class SignalProcessing {
+
+    public static ArrayList<Double> movingAverage(ArrayList<Double> values) {
+        ArrayList<Double> newValues = new ArrayList<Double>();
+        int size = values.size();
+
+        double newValue = 0;
+
+        for(int i = 0; i < size; ++i) {
+            if(i == 0) {
+                newValue = (values.get(i) + values.get(i+1) + values.get(i + 2) + values.get(i + 3) + values.get(i + 4))/5;
+            }
+            else if (i == 1) {
+                newValue = (values.get(i-1) + values.get(i) + values.get(i+1) + values.get(i + 2) + values.get(i + 3))/5;
+            }
+            else if (i == size - 1) {
+                newValue = (values.get(i-4) + values.get(i-3) + values.get(i-2) + values.get(i-1) + values.get(i))/5;
+            }
+            else if (i == size - 2){
+                newValue = (values.get(i-3) + values.get(i-2) + values.get(i-1) + values.get(i) + values.get(i + 1))/5;
+            }
+            else {
+                newValue = (values.get(i-2) + values.get(i-1) + values.get(i) + values.get(i + 2))/5;
+            }
+            newValues.add(newValue);
+        }
+        return newValues;
+    }
 
     public static ArrayList<Double> butterworthFilter(ArrayList<Double> values) {
         ArrayList<Double> newValues = new ArrayList<Double>();

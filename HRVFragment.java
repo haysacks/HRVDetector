@@ -1,8 +1,5 @@
 package com.example.android.camera2basic;
 
-import android.content.Context;
-import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -13,8 +10,6 @@ import android.widget.TextView;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -31,11 +26,11 @@ public class HRVFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_hrv, container, false);
 
-        graphView = (GraphView) view.findViewById(R.id.graph2);
-        avnnView = (TextView) view.findViewById(R.id.avnnView);
-        sdnnView = (TextView) view.findViewById(R.id.sdnnView);
-        rmssdView = (TextView) view.findViewById(R.id.rmssdView);
-        pnn50View = (TextView) view.findViewById(R.id.pnn50View);
+        graphView = view.findViewById(R.id.graph2);
+        avnnView = view.findViewById(R.id.avnnView);
+        sdnnView = view.findViewById(R.id.sdnnView);
+        rmssdView = view.findViewById(R.id.rmssdView);
+        pnn50View = view.findViewById(R.id.pnn50View);
 
         graphView.getGridLabelRenderer().setHorizontalLabelsVisible(false);
         graphView.getGridLabelRenderer().setVerticalLabelsVisible(false);

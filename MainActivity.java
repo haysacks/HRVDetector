@@ -2,15 +2,12 @@ package com.example.android.camera2basic;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import java.util.ArrayList;
-
 public class MainActivity extends AppCompatActivity {
-    public static final double RECORDING_TIME = 20.0;
+    public static final double RECORDING_TIME = 10.0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
