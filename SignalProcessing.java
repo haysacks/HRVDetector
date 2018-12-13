@@ -1,7 +1,13 @@
 package com.example.android.camera2basic;
 
+import android.util.Log;
+
 import org.apache.commons.math3.analysis.interpolation.SplineInterpolator;
 import org.apache.commons.math3.analysis.polynomials.PolynomialSplineFunction;
+import org.apache.commons.math3.complex.Complex;
+import org.apache.commons.math3.transform.DftNormalization;
+import org.apache.commons.math3.transform.FastFourierTransformer;
+import org.apache.commons.math3.transform.TransformType;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -38,16 +44,92 @@ public class SignalProcessing {
         return newValues;
     }
 
-    public static ArrayList<Double> butterworthFilter(ArrayList<Double> values) {
+    public static ArrayList<Double> signalProcess(ArrayList<Double> values) {
+        double frameRate = values.size() / MainActivity.RECORDING_TIME;
+
+        values = butterworthFilter(values, frameRate);
+        values = splineInterpolate(values);
+//        values = fftTransform(values);
+//        values = slidingWindowTransform(values, frameRate);
+//        values = movingAverage(values);
+
+        return values;
+    }
+
+    public static ArrayList<Double> butterworthFilter(ArrayList<Double> values, double frameRate) {
         ArrayList<Double> newValues = new ArrayList<Double>();
         Butterworth butterworth = new Butterworth();
 
-        butterworth.bandStop(2, 250, 50, 5);
+        double initialValue = frameRate * MainActivity.CUTOFF_TIME;
+        Log.d("DDD", Double.toString(frameRate) + " " + Double.toString(initialValue) + " " + Integer.toString(values.size()));
+
+        double bpmLow = 40 / 60;
+        double bpmHigh = 230 / 60;
+
+        butterworth.bandPass(2, frameRate * 2, (bpmLow + bpmHigh) / 2, (bpmHigh - bpmLow) / 2);
+
         for(Double value : values) {
             double newValue = butterworth.filter(value);
             newValues.add(newValue);
         }
+
+        newValues = new ArrayList<Double>(newValues.subList((int)Math.ceil(initialValue), newValues.size()));
+
         return newValues;
+    }
+
+    public static ArrayList<Double> slidingWindowTransform(ArrayList<Double> values, double frameRate) {
+        int windowSize = values.size() / 2;
+        int windowInterval = (int) (0.5 * frameRate);
+        int steps = values.size() / windowInterval;
+
+        ArrayList<Double> newValues = new ArrayList<Double>();
+
+        for (int i = 0; i < steps; ++i) {
+            int initialIndex = i * windowInterval;
+            int finalIndex = Math.min(initialIndex + windowSize, values.size());
+            ArrayList<Double> subValues = new ArrayList<Double>(values.subList(initialIndex, finalIndex));
+            subValues = fftTransform(subValues);
+            newValues.addAll(subValues);
+        }
+
+        return newValues;
+    }
+
+    public static ArrayList<Double> fftTransform(ArrayList<Double> values) {
+        int initialSize = values.size();
+        HanningWindow hw = new HanningWindow();
+
+        int size = closestPowerOfTwo(initialSize);
+        double[] newValues = new double[size];
+
+        for(int i = 0; i < size; ++i) {
+            if(i < initialSize) {
+                newValues[i] = values.get(i) * hw.value(i, size);
+            }
+            else {
+                newValues[i] = 0.0;
+            }
+        }
+
+        ArrayList<Double> magValues = new ArrayList<Double>();
+        FastFourierTransformer transformer = new FastFourierTransformer(DftNormalization.STANDARD);
+
+        Complex[] complexResults = transformer.transform(newValues, TransformType.FORWARD);
+
+        for(Complex c : complexResults) {
+            magValues.add(c.getReal() * c.getReal() + c.getImaginary() * c.getImaginary());
+        }
+
+        return new ArrayList<Double>(magValues);
+    }
+
+    private static int closestPowerOfTwo(int size) {
+        int power = 1;
+        while(power < size) {
+            power <<= 1;
+        }
+        return power;
     }
 
     public static Map<Double, Double> getPeaks(ArrayList<Double> values, ArrayList<Double> x) {
@@ -110,7 +192,7 @@ public class SignalProcessing {
         double[] x = new double[size];
         double[] y = new double[size];
 
-        for (int i=0; i < size; i++) {
+        for (int i=0; i < size; ++i) {
             x[i] = MainActivity.RECORDING_TIME * i / size;
             y[i] = values.get(i);
         }
