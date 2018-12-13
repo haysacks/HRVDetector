@@ -8,7 +8,7 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
     public static final double RECORDING_TIME = 15.0;
-    public static final double CUTOFF_TIME = 2.0;
+    public static final double CUTOFF_TIME = 5.0;
     private static MyDBHandler dbHandler;
 
     @Override

@@ -158,7 +158,7 @@ public class MyDBHandler extends SQLiteOpenHelper {
     }
 
     private String getDateTime() {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault());
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy 'at' hh:mm:ss aaa", Locale.getDefault());
         Date date = new Date();
         return dateFormat.format(date);
     }
