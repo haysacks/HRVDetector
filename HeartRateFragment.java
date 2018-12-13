@@ -48,9 +48,7 @@ public class HeartRateFragment extends Fragment {
             hueValues.add((double)hsv[0]);
         }
 
-        hueValues = SignalProcessing.butterworthFilter(hueValues);
-        hueValues = SignalProcessing.splineInterpolate(hueValues);
-        hueValues = SignalProcessing.movingAverage(hueValues);
+        hueValues = SignalProcessing.signalProcess(hueValues);
 
         for(double d : hueValues) {
             System.out.println(d);

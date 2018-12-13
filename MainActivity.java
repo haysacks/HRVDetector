@@ -7,7 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
-    public static final double RECORDING_TIME = 10.0;
+    public static final double RECORDING_TIME = 20.0;
+    public static final double CUTOFF_TIME = 5.0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
