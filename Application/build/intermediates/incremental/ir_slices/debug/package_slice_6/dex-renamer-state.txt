@@ -1,4 +1,0 @@
-#Fri Dec 07 09:15:01 ICT 2018
-base.0=C\:\\lab\\Mobile\\HRV\\Application\\build\\intermediates\\transforms\\dexMerger\\debug\\6
-path.0=classes.dex
-renamed.0=classes.dex
