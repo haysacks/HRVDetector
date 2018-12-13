@@ -18,7 +18,10 @@
     <string name="description_info">Info</string>
     <string name="request_permission">This sample needs camera permission.</string>
     <string name="camera_error">This device doesn\'t support Camera2 API.</string>
+    <string name="avnn">Average of all NN intervals</string>
+    <string name="sdnn">Standard deviation of all NN intervals</string>
+    <string name="rmssd">Square root of the mean of the squares of differences between adjacent NN intervals</string>
+    <string name="pnn50">Percentage of differences between adjacent NN intervals that are greater than 50 ms</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

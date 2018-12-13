@@ -35,6 +35,7 @@ dependencies {
     implementation 'uk.me.berndporr:iirj:1.1'
     implementation 'com.jjoe64:graphview:4.2.2'
     implementation 'com.andkulikov:transitionseverywhere:1.8.1'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.+'
 }
 
 // The sample build uses multiple directories to

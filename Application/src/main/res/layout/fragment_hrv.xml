@@ -10,6 +10,7 @@
     tools:context=".HRVFragment">
 
     <LinearLayout
+        android:id="@+id/avnnLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -26,7 +27,7 @@
             android:gravity="right"
             android:text="AVNN:"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/avnnView"
@@ -40,6 +41,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/sdnnLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -54,7 +56,7 @@
             android:layout_marginEnd="12dp"
             android:layout_weight="1"
             android:gravity="right"
-            android:text="SDVNN:"
+            android:text="SDNN:"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -70,6 +72,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/rmssdLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -100,6 +103,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/pnn50Layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
